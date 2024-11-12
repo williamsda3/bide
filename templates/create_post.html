@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Create New Post{% endblock %}
+
+{% block content %}
+<h1 class="title">Create a New Post</h1>
+<form method="post" action="{{ url_for('create_post') }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="field">
+        {{ form.content.label(class="label") }}
+        <div class="control">
+            {{ form.content(class="textarea", placeholder="What's on your mind?") }}
+        </div>
+    </div>
+    <div class="field">
+        {{ form.media.label(class="label") }}
+        <div class="control">
+            {{ form.media(class="input") }}
+        </div>
+    </div>
+    <div class="field">
+        {{ form.tags.label(class="label") }}
+        <div class="control">
+            {{ form.tags(class="input", placeholder="tag1, tag2, tag3") }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            {{ form.submit(class="button is-primary") }}
+        </div>
+    </div>
+</form>
+{% endblock %}

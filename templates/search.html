@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<h1 class="title">Search Results for "{{ query }}"</h1>
+
+{% if posts %}
+{% for post in posts %}
+{% include '_post.html' %}
+{% endfor %}
+
+{% else %}
+    <div class="notification is-warning">
+        <p>No results found for "{{ query }}".</p>
+    </div>
+{% endif %}
+{% endblock %}

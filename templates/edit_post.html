@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Post{% endblock %}
+
+{% block content %}
+<h1 class="title">Edit Post</h1>
+<form method="post" action="{{ url_for('edit_post', post_id=post.id) }}" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="field">
+        {{ form.content.label(class="label") }}
+        <div class="control">
+            {{ form.content(class="textarea") }}
+        </div>
+    </div>
+    <div class="field">
+        {{ form.media.label(class="label") }}
+        <div class="control">
+            {{ form.media(class="input") }}
+        </div>
+        {% if post.media_filename %}
+            <p>Current Media: {{ post.media_filename }}</p>
+        {% endif %}
+    </div>
+    <div class="field">
+        {{ form.tags.label(class="label") }}
+        <div class="control">
+            {{ form.tags(class="input") }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            {{ form.submit(class="button is-primary") }}
+        </div>
+    </div>
+</form>
+{% endblock %}

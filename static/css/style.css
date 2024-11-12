@@ -1,0 +1,34 @@
+
+.tag.is-tag-color {
+    background-color: #4f709e; /* Hot pink background */
+    color: #ffffff;            /* White text */
+}
+
+.tag.is-tag-color:hover {
+    background-color: #406787; /* Slightly lighter pink on hover */
+}
+
+
+/* Custom Edit Button Outlined */
+.button.is-edit.is-outlined {
+    background-color: transparent;
+    color: #5a62cd; /* SlateBlue */
+    border-color: #5a6dcd;
+}
+
+.button.is-edit.is-outlined:hover {
+    background-color: #3b70a9;
+    color: #fff;
+}
+
+/* Custom Delete Button Outlined */
+.button.is-delete.is-outlined {
+    background-color: transparent;
+    color: #943f3f; /* Crimson */
+    border-color: #a23d3d;
+}
+
+.button.is-delete.is-outlined:hover {
+    background-color: #b64259;
+    color: #fff;
+}

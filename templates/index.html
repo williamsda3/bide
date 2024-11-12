@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% for post in posts %}
+
+    {% include '_post.html' %}
+
+{% else %}
+<div class="notification is-info">
+    <p>No posts yet. <a href="{{ url_for('create_post') }}">Create a new post</a>.</p>
+</div>
+{% endfor %}
+{% endblock %}

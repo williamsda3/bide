@@ -1,0 +1,7 @@
+/* static/css/custom.css */
+
+/* Override Bulma variables */
+:root {
+    --primary: #4a4a4a; /* Dark gray */
+    --link: #3273dc;    /* Bulma default blue */
+}

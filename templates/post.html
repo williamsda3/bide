@@ -1,0 +1,12 @@
+<!-- app/templates/post.html -->
+{% if post.media_filename %}
+    {% set file_ext = post.media_filename.rsplit('.', 1)[1].lower() %}
+    {% if file_ext in ['png', 'jpg', 'jpeg', 'gif'] %}
+        <img src="{{ url_for('static', filename='uploads/' + post.media_filename) }}" alt="Image">
+    {% elif file_ext in ['mp4', 'mov', 'avi'] %}
+        <video controls>
+            <source src="{{ url_for('static', filename='uploads/' + post.media_filename) }}" type="video/{{ file_ext }}">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+{% endif %}
